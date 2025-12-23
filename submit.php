@@ -1,8 +1,29 @@
 <?php
 $conn = new mysqli('localhost','root','','tp_contact');
 if ($conn->connect_error) die('DB error');
+
 $nom = $conn->real_escape_string($_POST['nom']);
 $email = $conn->real_escape_string($_POST['email']);
 $msg = $conn->real_escape_string($_POST['message']);
-$conn->query("INSERT INTO messages (nom,email,message) VALUES ('$nom','$email','$msg')");
+
+// Handle file uploads
+$image_path = '';
+$audio_path = '';
+
+// Handle image upload
+if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+    $image_name = time() . '_' . $_FILES['image']['name'];
+    $image_path = 'uploads/' . $image_name;
+    move_uploaded_file($_FILES['image']['tmp_name'], $image_path);
+}
+
+// Handle audio upload
+if (isset($_FILES['audio']) && $_FILES['audio']['error'] == 0) {
+    $audio_name = time() . '_' . $_FILES['audio']['name'];
+    $audio_path = 'uploads/' . $audio_name;
+    move_uploaded_file($_FILES['audio']['tmp_name'], $audio_path);
+}
+
+$conn->query("INSERT INTO messages (nom,email,message,image_path,audio_path) VALUES ('$nom','$email','$msg','$image_path','$audio_path')");
 header('Location: list.php');
+?>

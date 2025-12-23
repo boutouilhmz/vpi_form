@@ -10,10 +10,12 @@
 <div class="container mt-5">
   <img src="img/vpi.webp" alt="Logo VPI" class="mb-3" style="max-width: 200px; height: auto;">
   <h3>Formulaire de contact</h3>
-  <form action="submit.php" method="POST">
+  <form action="submit.php" method="POST" enctype="multipart/form-data"></form>
     <div class="mb-3"><label>Nom</label><input name="nom" class="form-control" required></div>
     <div class="mb-3"><label>Email</label><input type="email" name="email" class="form-control" required></div>
     <div class="mb-3"><label>Message</label><textarea name="message" class="form-control" required></textarea></div>
+    <div class="mb-3"><label>Insérer une image</label><input type="file" name="image" class="form-control" accept="image/*"></div>
+    <div class="mb-3"><label>Insérer un audio</label><input type="file" name="audio" class="form-control" accept="audio/*"></div>
     <button class="btn btn-primary">Envoyer</button>
   </form>
   <a href="list.php" class="btn btn-link mt-3">Voir messages</a>
