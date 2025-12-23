@@ -1,0 +1,17 @@
+# Database access file
+db-acces.txt
+
+# Uploaded files
+uploads/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
