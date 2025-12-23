@@ -19,6 +19,7 @@ $res = $conn->query('SELECT * FROM messages ORDER BY id DESC');
           <th>Nom</th>
           <th>Email</th>
           <th>Message</th>
+          <th>Potentiel</th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +29,7 @@ $res = $conn->query('SELECT * FROM messages ORDER BY id DESC');
           <td><?= htmlspecialchars($r['nom']) ?></td>
           <td><?= htmlspecialchars($r['email']) ?></td>
           <td><?= htmlspecialchars($r['message']) ?></td>
+          <td><?= $r['potentiel'] ?>/10</td>
         </tr>
         <?php endwhile; ?>
       </tbody>

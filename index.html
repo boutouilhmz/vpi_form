@@ -22,6 +22,11 @@
       <label>Message</label>
       <textarea name="message" required></textarea>
     </div>
+    <div>
+      <label>Potentiel (1-10)</label>
+      <input type="range" name="potentiel" min="1" max="10" value="5" oninput="this.nextElementSibling.value = this.value">
+      <output>5</output>
+    </div>
     <button>Envoyer</button>
   </form>
   <div>
