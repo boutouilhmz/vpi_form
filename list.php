@@ -19,8 +19,6 @@ $res = $conn->query('SELECT * FROM messages ORDER BY id DESC');
           <th>Nom</th>
           <th>Email</th>
           <th>Message</th>
-          <th>Image</th>
-          <th>Audio</th>
         </tr>
       </thead>
       <tbody>
@@ -30,23 +28,6 @@ $res = $conn->query('SELECT * FROM messages ORDER BY id DESC');
           <td><?= htmlspecialchars($r['nom']) ?></td>
           <td><?= htmlspecialchars($r['email']) ?></td>
           <td><?= htmlspecialchars($r['message']) ?></td>
-          <td>
-            <?php if(!empty($r['image_path'])): ?>
-              <img src="<?= htmlspecialchars($r['image_path']) ?>" alt="Image">
-            <?php else: ?>
-              -
-            <?php endif; ?>
-          </td>
-          <td>
-            <?php if(!empty($r['audio_path'])): ?>
-              <audio controls>
-                <source src="<?= htmlspecialchars($r['audio_path']) ?>" type="audio/mpeg">
-                Votre navigateur ne supporte pas l'audio.
-              </audio>
-            <?php else: ?>
-              -
-            <?php endif; ?>
-          </td>
         </tr>
         <?php endwhile; ?>
       </tbody>

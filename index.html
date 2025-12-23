@@ -9,7 +9,7 @@
 <div>
   <img src="img/vpi.webp" alt="Logo VPI">
   <h3>Formulaire de contact</h3>
-  <form action="submit.php" method="POST" enctype="multipart/form-data">
+  <form action="submit.php" method="POST">
     <div>
       <label>Nom</label>
       <input name="nom" required>
@@ -21,14 +21,6 @@
     <div>
       <label>Message</label>
       <textarea name="message" required></textarea>
-    </div>
-    <div>
-      <label>Insérer une image</label>
-      <input type="file" name="image" accept=".jpg,.jpeg,.png,.gif">
-    </div>
-    <div>
-      <label>Insérer un audio</label>
-      <input type="file" name="audio" accept=".mp3">
     </div>
     <button>Envoyer</button>
   </form>

@@ -5,7 +5,5 @@ CREATE TABLE IF NOT EXISTS messages (
   nom VARCHAR(150),
   email VARCHAR(200),
   message TEXT,
-  image_path VARCHAR(255),
-  audio_path VARCHAR(255),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
